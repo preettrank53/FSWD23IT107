@@ -1,0 +1,153 @@
+/* Dark Theme CSS for To-Do List App */
+:root {
+  --bg-color: #1a1a1a;
+  --card-bg: #2c2c2c;
+  --text-color: #e0e0e0;
+  --highlight-color: #6c5ce7;
+  --button-color: #6c5ce7;
+  --button-hover: #8878ef;
+  --error-color: #e74c3c;
+  --success-color: #27ae60;
+  --input-bg: #3a3a3a;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.App {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Add a container for the input and button */
+.task-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px var(--highlight-color);
+}
+
+button {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+p {
+  text-align: center;
+  margin: 24px 0;
+  color: #888;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+  margin-top: 24px;
+}
+
+li {
+  background-color: var(--input-bg);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow);
+}
+
+li button {
+  background-color: #e74c3c;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+}
+
+li button:hover {
+  background-color: #ff6b5e;
+}
+
+/* Make the design responsive */
+@media (max-width: 600px) {
+  .App {
+    padding: 20px;
+  }
+  
+  .task-input-container {
+    flex-direction: column;
+  }
+  
+  input {
+    width: 100%;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
